@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pisaditas — Proyecto | Polplab</title>
+  <link rel="icon" type="image/png" sizes="64x64" href="favicon.png" />
+  <link rel="apple-touch-icon" href="POLPLAB-LOGO3526625.png" />
+  <meta name="description" content="Pisaditas — web para un centro de educación temprana. Diseño y desarrollo por Polplab. Recorrido completo de todas las páginas del proyecto." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://polplab.com/proyecto-pisaditas.html" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://polplab.com/proyecto-pisaditas.html" />
+  <meta property="og:title" content="Pisaditas — Proyecto | Polplab" />
+  <meta property="og:description" content="Web para un centro de educación temprana. Recorrido completo de todas las páginas del proyecto." />
+  <meta property="og:image" content="https://polplab.com/capturas/pisaditas/01-inicio.jpg" />
+  <meta property="og:site_name" content="Polplab" />
+  <meta property="og:locale" content="es_PE" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* ── Página de detalle de proyecto ──────────────────────────────── */
+    .proj-hero { padding-top: 132px; padding-bottom: 40px; position: relative; overflow: hidden; }
+    .proj-back {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500;
+      color: var(--faint); margin-bottom: 22px; transition: color .2s ease;
+    }
+    .proj-back:hover { color: var(--accent); }
+    .proj-meta {
+      display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+      font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500;
+      margin-bottom: 14px;
+    }
+    .proj-chip {
+      padding: 5px 12px; border-radius: 999px;
+      background: rgba(0,153,255,.10); color: var(--accent);
+    }
+    .proj-date { color: var(--faint); }
+    .proj-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(34px, 5.5vw, 56px); font-weight: 400;
+      line-height: 112%; letter-spacing: -.02em;
+      margin: 0 0 18px; max-width: 780px;
+    }
+    .proj-lead {
+      font-family: 'Inter', sans-serif; font-size: 17px; line-height: 158%;
+      opacity: .7; max-width: 620px; margin: 0 0 28px;
+    }
+    .proj-facts {
+      display: flex; flex-wrap: wrap; gap: 10px 30px; margin: 0 0 34px;
+      font-family: 'Inter', sans-serif; font-size: 14px;
+    }
+    .proj-fact { display: flex; flex-direction: column; gap: 2px; }
+    .proj-fact b { font-weight: 600; color: var(--dark); }
+    .proj-fact span { color: var(--faint); font-size: 12.5px; }
+    .proj-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+    /* Galería de capturas */
+    .gallery { padding-top: 24px; padding-bottom: 80px; }
+    .gallery-head {
+      font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600;
+      letter-spacing: .12em; text-transform: uppercase; color: var(--faint);
+      margin-bottom: 8px;
+    }
+    .gallery-sub {
+      font-family: 'Inter', sans-serif; font-size: 15px; opacity: .65;
+      margin-bottom: 40px; max-width: 560px;
+    }
+    .shot {
+      border-radius: 18px; overflow: hidden;
+      border: 1px solid rgba(216,223,229,.7);
+      background: #fff;
+      box-shadow: 0 22px 60px -28px rgba(14,28,41,.28);
+      margin-bottom: 46px;
+    }
+    .shot-bar {
+      display: flex; align-items: center; gap: 14px;
+      padding: 12px 16px;
+      background: rgba(246,251,255,.9);
+      border-bottom: 1px solid rgba(216,223,229,.7);
+    }
+    .shot-dots { display: flex; gap: 6px; flex-shrink: 0; }
+    .shot-dots i { width: 11px; height: 11px; border-radius: 50%; display: block; }
+    .shot-dots i:nth-child(1) { background: #ff5f57; }
+    .shot-dots i:nth-child(2) { background: #febc2e; }
+    .shot-dots i:nth-child(3) { background: #28c840; }
+    .shot-url {
+      flex: 1; min-width: 0;
+      font-family: 'Inter', sans-serif; font-size: 12.5px; color: var(--faint);
+      background: #fff; border: 1px solid rgba(216,223,229,.8);
+      border-radius: 7px; padding: 5px 12px;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .shot-name {
+      flex-shrink: 0;
+      font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600;
+      color: var(--dark); opacity: .55;
+    }
+    .shot-scroll { max-height: 560px; overflow-y: auto; overflow-x: hidden; }
+    .shot-scroll img { width: 100%; display: block; }
+    .shot-caption {
+      display: flex; align-items: baseline; gap: 10px;
+      padding: 13px 18px;
+      border-top: 1px solid rgba(216,223,229,.7);
+      font-family: 'Inter', sans-serif;
+    }
+    .shot-caption b { font-size: 14px; font-weight: 600; }
+    .shot-caption span { font-size: 12.5px; color: var(--faint); }
+    .shot-hint {
+      text-align: center; font-family: 'Inter', sans-serif;
+      font-size: 12px; color: var(--faint); padding: 8px 0 2px;
+    }
+    @media (max-width: 640px) {
+      .shot-scroll { max-height: 420px; }
+      .shot-name { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-cloud" aria-hidden="true"></div>
+
+  <main id="main-content">
+
+  <!-- ══ NAVBAR ════════════════════════════════════════════════════════ -->
+  <div class="nav-outer">
+    <nav class="navbar" id="navbar">
+      <a class="nav-logo" href="index.html"><picture><source srcset="POLPLAB-LOGO3526625.webp" type="image/webp" /><img src="POLPLAB-LOGO3526625.png" alt="Polplab logo" loading="lazy" /></picture>Polplab</a>
+      <ul class="nav-links">
+        <li><a href="index.html#inicio">Inicio</a></li>
+        <li><a href="index.html#servicios">Servicios</a></li>
+        <li><a href="index.html#proceso">Proceso</a></li>
+        <li><a href="index.html#proyectos" class="active">Proyectos</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- ══ HERO DEL PROYECTO ═════════════════════════════════════════════ -->
+  <section class="section proj-hero">
+    <div class="section-cloud" style="width:500px;height:320px;top:-60px;left:-80px;opacity:.35;" aria-hidden="true"></div>
+    <div class="section-cloud" style="width:460px;height:300px;top:-40px;left:50%;transform:translateX(-50%);opacity:.3;" aria-hidden="true"></div>
+    <div class="section-cloud" style="width:500px;height:320px;top:-60px;right:-80px;left:auto;opacity:.35;" aria-hidden="true"></div>
+    <div class="wrap">
+      <a href="index.html#proyectos" class="proj-back reveal">← Volver a proyectos</a>
+
+      <div class="proj-meta reveal" style="transition-delay:.05s;">
+        <span class="proj-chip">Web Educativa</span>
+        <span class="proj-date">Jun 2026</span>
+      </div>
+
+      <h1 class="proj-title reveal" style="transition-delay:.1s;">Pisaditas</h1>
+
+      <p class="proj-lead reveal" style="transition-delay:.15s;">
+        Sitio web para un centro de educación temprana. Presenta el programa, la
+        metodología didáctica, el equipo, los planes de precios y un blog con
+        artículos para las familias.
+      </p>
+
+      <div class="proj-facts reveal" style="transition-delay:.2s;">
+        <div class="proj-fact"><b>Tipo</b><span>Sitio web informativo</span></div>
+        <div class="proj-fact"><b>Sector</b><span>Educación infantil</span></div>
+        <div class="proj-fact"><b>Páginas</b><span>Inicio · Precios · Contacto</span></div>
+        <div class="proj-fact"><b>Entrega</b><span>Diseño + desarrollo</span></div>
+      </div>
+
+      <div class="proj-actions reveal" style="transition-delay:.25s;">
+        <a href="#capturas" class="btn-primary">Ver las capturas ↓</a>
+        <a href="index.html#contacto" class="btn-outline">Quiero algo así</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ GALERÍA DE CAPTURAS ═══════════════════════════════════════════ -->
+  <section class="section gallery" id="capturas">
+    <div class="wrap">
+      <div class="gallery-head reveal">Recorrido del proyecto</div>
+      <p class="gallery-sub reveal" style="transition-delay:.05s;">
+        Páginas principales del sitio. Desplázate dentro de cada marco para ver
+        la página completa.
+      </p>
+
+      <!-- Inicio -->
+      <figure class="shot reveal">
+        <div class="shot-bar"><div class="shot-dots"><i></i><i></i><i></i></div><div class="shot-url">pisaditas.com/</div><div class="shot-name">Inicio</div></div>
+        <div class="shot-scroll"><img src="capturas/pisaditas/01-inicio.jpg" alt="Página de inicio de Pisaditas" loading="lazy" /></div>
+        <figcaption class="shot-caption"><b>Inicio</b><span>Portada, propuesta de valor, programas, testimonios y preguntas frecuentes.</span></figcaption>
+      </figure>
+
+      <!-- Planes de Precios -->
+      <figure class="shot reveal">
+        <div class="shot-bar"><div class="shot-dots"><i></i><i></i><i></i></div><div class="shot-url">pisaditas.com/planes-de-precios</div><div class="shot-name">Planes de Precios</div></div>
+        <div class="shot-scroll"><img src="capturas/pisaditas/03-planes-precios.jpg" alt="Página de planes de precios de Pisaditas" loading="lazy" /></div>
+        <figcaption class="shot-caption"><b>Planes de Precios</b><span>Comparativa de planes y lo que incluye cada modalidad.</span></figcaption>
+      </figure>
+
+      <!-- Contacto -->
+      <figure class="shot reveal">
+        <div class="shot-bar"><div class="shot-dots"><i></i><i></i><i></i></div><div class="shot-url">pisaditas.com/contacto</div><div class="shot-name">Contacto</div></div>
+        <div class="shot-scroll"><img src="capturas/pisaditas/05-contacto.jpg" alt="Página de contacto de Pisaditas" loading="lazy" /></div>
+        <figcaption class="shot-caption"><b>Contacto</b><span>Formulario de inscripción y datos de contacto del centro.</span></figcaption>
+      </figure>
+
+      <div class="proj-actions reveal" style="justify-content:center;margin-top:20px;">
+        <a href="index.html#proyectos" class="btn-outline">← Volver a proyectos</a>
+        <a href="index.html#contacto" class="btn-primary">Iniciar mi proyecto →</a>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ══ FOOTER ════════════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-inner">
+        <span class="footer-logo"><picture><source srcset="POLPLAB-LOGO3526625.webp" type="image/webp" /><img src="POLPLAB-LOGO3526625.png" alt="Polplab logo" loading="lazy" /></picture>Polplab</span>
+        <nav class="footer-nav">
+          <a href="index.html#servicios">Servicios</a>
+          <a href="index.html#proyectos">Proyectos</a>
+          <a href="index.html#proceso">Proceso</a>
+          <a href="privacidad.html">Privacidad</a>
+        </nav>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/polplabcuentas/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/Polplab/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@alvaronegociostech" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@alvaro.negocios.tech" target="_blank" rel="noopener" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp floating button -->
+  <a href="https://wa.me/51980857382" target="_blank" rel="noopener" class="whatsapp-fab" aria-label="Contactar por WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28" fill="#fff">
+      <path d="M16 0C7.163 0 0 7.163 0 16c0 2.82.737 5.469 2.027 7.77L0 32l8.43-2.008A15.93 15.93 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 0 1-6.757-1.843l-.484-.287-5.005 1.193 1.214-4.875-.316-.5A13.267 13.267 0 0 1 2.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.27-9.87c-.398-.2-2.354-1.162-2.72-1.294-.365-.133-.63-.2-.896.2-.265.398-1.029 1.294-1.261 1.56-.232.265-.465.298-.863.1-.398-.2-1.682-.62-3.203-1.977-1.184-1.056-1.983-2.36-2.215-2.758-.232-.398-.025-.613.174-.81.18-.178.398-.465.597-.697.2-.232.265-.398.398-.664.133-.265.067-.497-.033-.697-.1-.2-.896-2.16-1.228-2.957-.323-.775-.651-.67-.896-.682l-.764-.013c-.265 0-.697.1-1.062.497-.365.398-1.395 1.36-1.395 3.317 0 1.957 1.428 3.847 1.628 4.112.2.265 2.81 4.29 6.808 6.018.951.41 1.694.656 2.273.84.955.303 1.825.26 2.513.158.766-.114 2.354-.963 2.686-1.893.332-.93.332-1.727.232-1.893-.1-.165-.365-.265-.763-.465z"/>
+    </svg>
+  </a>
+
+  <script>
+    /* Navbar scroll state */
+    const nb = document.getElementById('navbar');
+    const no = nb.closest('.nav-outer');
+    window.addEventListener('scroll', () => {
+      const s = scrollY > 30;
+      nb.classList.toggle('scrolled', s);
+      if (no) no.classList.toggle('scrolled', s);
+    }, { passive: true });
+
+    /* Scroll reveal */
+    const ro = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('on'); ro.unobserve(e.target); }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+  </script>
+</body>
+</html>
