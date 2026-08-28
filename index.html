@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Polplab — Software Development Studio</title>
+  <title>Polplab — Desarrollo de software a medida | Web, apps y APIs</title>
   <link rel="icon" type="image/png" sizes="64x64" href="favicon.png" />
   <link rel="apple-touch-icon" href="POLPLAB-LOGO3526625.png" />
   <meta name="description" content="Construimos apps web, móviles y APIs de alto rendimiento para startups y empresas que quieren crecer con software a medida." />
@@ -13,19 +13,22 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://polplab.com/" />
-  <meta property="og:title" content="Polplab — Software Development Studio" />
+  <meta property="og:title" content="Polplab — Desarrollo de software a medida | Web, apps y APIs" />
   <meta property="og:description" content="Construimos apps web, móviles y APIs de alto rendimiento para startups y empresas que quieren crecer con software a medida." />
   <meta property="og:image" content="https://polplab.com/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:alt" content="Polplab — Desarrollo de software a medida" />
   <meta property="og:site_name" content="Polplab" />
   <meta property="og:locale" content="es_PE" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Polplab — Software Development Studio" />
+  <meta name="twitter:title" content="Polplab — Desarrollo de software a medida | Web, apps y APIs" />
   <meta name="twitter:description" content="Construimos apps web, móviles y APIs de alto rendimiento para startups y empresas que quieren crecer con software a medida." />
   <meta name="twitter:image" content="https://polplab.com/og-image.png" />
+  <meta name="twitter:image:alt" content="Polplab — Desarrollo de software a medida" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -35,31 +38,48 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Polplab",
-    "description": "Software Development Studio. Construimos apps web, móviles y APIs de alto rendimiento para startups y empresas.",
-    "url": "https://polplab.com",
-    "logo": "https://polplab.com/POLPLAB-LOGO3526625.png",
-    "image": "https://polplab.com/og-image.png",
-    "sameAs": [
-      "https://www.instagram.com/polplabcuentas/",
-      "https://www.linkedin.com/company/Polplab/",
-      "https://www.youtube.com/@alvaronegociostech",
-      "https://www.tiktok.com/@alvaro.negocios.tech"
-    ],
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "contactType": "Customer Service",
-      "telephone": "+51-980-857-382",
-      "url": "https://wa.me/51980857382",
-      "availableLanguage": "Spanish"
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "PE"
-    },
-    "areaServed": ["PE", "LATAM"],
-    "serviceType": ["Desarrollo Web", "Aplicaciones Móviles", "APIs", "Inteligencia Artificial"]
+    "@graph": [
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://polplab.com/#org",
+        "name": "Polplab",
+        "description": "Estudio de desarrollo de software. Construimos apps web, móviles y APIs de alto rendimiento para startups y empresas.",
+        "url": "https://polplab.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://polplab.com/POLPLAB-LOGO3526625.png"
+        },
+        "image": "https://polplab.com/og-image.png",
+        "sameAs": [
+          "https://www.instagram.com/polplabcuentas/",
+          "https://www.linkedin.com/company/Polplab/",
+          "https://www.youtube.com/@alvaronegociostech",
+          "https://www.tiktok.com/@alvaro.negocios.tech"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "Customer Service",
+          "telephone": "+51-980-857-382",
+          "url": "https://wa.me/51980857382",
+          "availableLanguage": "Spanish"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "PE"
+        },
+        "areaServed": ["PE", "LATAM"],
+        "serviceType": ["Desarrollo Web", "Aplicaciones Móviles", "APIs", "Inteligencia Artificial"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://polplab.com/#website",
+        "url": "https://polplab.com/",
+        "name": "Polplab",
+        "description": "Desarrollo de software a medida: apps web, móviles y APIs.",
+        "inLanguage": "es-PE",
+        "publisher": { "@id": "https://polplab.com/#org" }
+      }
+    ]
   }
   </script>
   <link rel="stylesheet" href="styles.css" />
@@ -71,7 +91,7 @@
   <!-- ══ NAVBAR ════════════════════════════════════════════════════════ -->
   <div class="nav-outer">
     <nav class="navbar" id="navbar">
-      <span class="nav-logo"><picture><source srcset="POLPLAB-LOGO3526625.webp" type="image/webp" /><img src="POLPLAB-LOGO3526625.png" alt="Polplab logo" loading="lazy" /></picture>Polplab</span>
+      <span class="nav-logo"><picture><source srcset="POLPLAB-LOGO3526625.webp" type="image/webp" /><img src="POLPLAB-LOGO3526625.png" alt="Polplab logo" width="56" height="56" loading="lazy" decoding="async" /></picture>Polplab</span>
       <ul class="nav-links">
         <li><a href="#inicio" class="active">Inicio</a></li>
         <li><a href="#servicios">Servicios</a></li>
@@ -130,7 +150,7 @@
           <div class="eco-center">
             <div class="eco-pulse-ring"></div>
             <div class="eco-core">
-              <picture><source srcset="POLPLAB-LOGO3526625.webp" type="image/webp" /><img src="POLPLAB-LOGO3526625.png" width="180" height="180" alt="Polplab" loading="lazy" style="filter:brightness(0) saturate(100%) invert(28%) sepia(30%) saturate(600%) hue-rotate(212deg) brightness(85%);display:block;object-fit:contain;"/></picture>
+              <picture><source srcset="POLPLAB-LOGO3526625.webp" type="image/webp" /><img src="POLPLAB-LOGO3526625.png" width="180" height="180" alt="Polplab" loading="lazy" decoding="async" style="filter:brightness(0) saturate(100%) invert(28%) sepia(30%) saturate(600%) hue-rotate(212deg) brightness(85%);display:block;object-fit:contain;"/></picture>
             </div>
           </div>
 
@@ -499,7 +519,7 @@
         <!-- ── Card 1 · Cubo ── -->
         <a class="project-card" href="proyecto-cubo.html" data-category="web">
           <div class="card-image">
-            <img src="capturas/cubo/card.jpg" alt="Vista de la tienda virtual Cubo" loading="lazy" style="width:100%;height:auto;display:block;">
+            <img src="capturas/cubo/card.jpg" alt="Vista de la tienda virtual Cubo" width="1200" height="817" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;">
           </div>
           <div class="card-content">
             <div class="card-profile">
@@ -520,7 +540,7 @@
         <!-- ── Card 2 · Pisaditas ── -->
         <a class="project-card" href="proyecto-pisaditas.html" data-category="web">
           <div class="card-image">
-            <img src="capturas/pisaditas/card.jpg" alt="Vista del sitio web de Pisaditas" loading="lazy" style="width:100%;height:auto;display:block;">
+            <img src="capturas/pisaditas/card.jpg" alt="Vista del sitio web de Pisaditas" width="1200" height="546" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;">
           </div>
           <div class="card-content">
             <div class="card-profile">
@@ -845,7 +865,7 @@
   <footer class="footer">
     <div class="wrap">
       <div class="footer-inner">
-        <span class="footer-logo"><picture><source srcset="POLPLAB-LOGO3526625.webp" type="image/webp" /><img src="POLPLAB-LOGO3526625.png" alt="Polplab logo" loading="lazy" /></picture>Polplab</span>
+        <span class="footer-logo"><picture><source srcset="POLPLAB-LOGO3526625.webp" type="image/webp" /><img src="POLPLAB-LOGO3526625.png" alt="Polplab logo" width="56" height="56" loading="lazy" decoding="async" /></picture>Polplab</span>
         <nav class="footer-nav">
           <a href="#servicios">Servicios</a>
           <a href="#proyectos">Proyectos</a>
