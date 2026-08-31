@@ -1,0 +1,9 @@
+# Normaliza fin de línea a LF en el repo (evita diffs enormes por CRLF<->LF)
+* text=auto eol=lf
+
+# Binarios: no tocar
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.webp binary
+*.ico  binary
