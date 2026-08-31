@@ -132,11 +132,19 @@
     .btn-dark-sm:hover { opacity:.82; }
     @media(max-width:809px){
       .nav-links,.btn-ghost-sm{ display:none; }
-      /* En móvil la navbar no queda fija: solo el logo arriba, que se va con el scroll */
-      .nav-outer{ position:absolute; top:14px; width:calc(100% - 24px); }
+      /* En móvil: solo el logo, fijo arriba a la izquierda y estático.
+         No queda pegado al hacer scroll (se va con la página) y NO se
+         desplaza al activarse .scrolled. */
+      .nav-outer, .nav-outer.scrolled{
+        position:absolute; top:14px; left:14px;
+        transform:none;
+        width:auto; max-width:none;
+        transition:none;
+      }
       .navbar, .navbar.scrolled{
         background:transparent; box-shadow:none; border-radius:8px;
         border-color:transparent; backdrop-filter:none; -webkit-backdrop-filter:none;
+        padding-left:0; padding-right:0;
       }
     }
 
