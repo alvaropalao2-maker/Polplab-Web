@@ -472,15 +472,19 @@
       to   { transform: translate(-50%,-50%) rotate(360deg)  translateX(172px) rotate(-360deg); }
     }
     @keyframes orbit-node-sm {
-      from { transform: translate(-50%,-50%) rotate(0deg)    translateX(120px) rotate(0deg);    }
-      to   { transform: translate(-50%,-50%) rotate(360deg)  translateX(120px) rotate(-360deg); }
+      from { transform: translate(-50%,-50%) rotate(0deg)    translateX(112px) rotate(0deg);    }
+      to   { transform: translate(-50%,-50%) rotate(360deg)  translateX(112px) rotate(-360deg); }
     }
     @media(max-width:640px){
-      .ecosystem-map { height: 270px; }
+      .ecosystem-map { height: 300px; overflow: hidden; }
       .eco-node { font-size: 10px; animation-name: orbit-node-sm; }
       .eco-node-icon { width: 28px; height: 28px; }
       .eco-node-icon svg { width: 14px; height: 14px; }
       .eco-center { width: 64px; height: 64px; }
+      /* Encoger la esfera central y su logo para que las etiquetas no la toquen */
+      .eco-core, .eco-pulse-ring { width: 96px; height: 96px; }
+      .eco-core img { width: 54px; height: 54px; }
+      .eco-glow { width: 150px; height: 150px; }
     }
 
     /* ── Logos strip ────────────────────────────────────────────────── */
