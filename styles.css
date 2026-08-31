@@ -483,7 +483,7 @@
       .eco-center { width: 64px; height: 64px; }
       /* Encoger la esfera central y su logo para que las etiquetas no la toquen */
       .eco-core, .eco-pulse-ring { width: 96px; height: 96px; }
-      .eco-core img { width: 54px; height: 54px; }
+      .eco-core img { width: 59px; height: 59px; }
       .eco-glow { width: 150px; height: 150px; }
     }
 
