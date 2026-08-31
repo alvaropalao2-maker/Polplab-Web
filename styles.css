@@ -132,8 +132,12 @@
     .btn-dark-sm:hover { opacity:.82; }
     @media(max-width:809px){
       .nav-links,.btn-ghost-sm{ display:none; }
-      .nav-outer{ top:10px; width:calc(100% - 24px); }
-      .navbar{ background:transparent; box-shadow:none; border-radius:8px; border-color:transparent; }
+      /* En móvil la navbar no queda fija: solo el logo arriba, que se va con el scroll */
+      .nav-outer{ position:absolute; top:14px; width:calc(100% - 24px); }
+      .navbar, .navbar.scrolled{
+        background:transparent; box-shadow:none; border-radius:8px;
+        border-color:transparent; backdrop-filter:none; -webkit-backdrop-filter:none;
+      }
     }
 
     /* ── Scroll reveal ──────────────────────────────────────────────── */
