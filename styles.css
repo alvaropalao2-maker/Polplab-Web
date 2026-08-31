@@ -32,7 +32,7 @@
 
     /* ── Reset ──────────────────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; overflow-x: clip; }
     body {
       font-family: 'Inter', sans-serif;
       background-color: rgb(246, 251, 255);
