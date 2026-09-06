@@ -143,6 +143,7 @@
       color: var(--dark); opacity: .55;
     }
     .shot-scroll { max-height: 560px; overflow-y: auto; overflow-x: hidden; }
+    .shot-scroll picture { display: block; }
     .shot-scroll img { width: 100%; height: auto; display: block; }
     .shot-caption {
       display: flex; align-items: baseline; gap: 10px;
@@ -228,7 +229,7 @@
   <!-- ══ NAVBAR ════════════════════════════════════════════════════════ -->
   <div class="nav-outer">
     <nav class="navbar" id="navbar">
-      <a class="nav-logo" href="index.html"><picture><source srcset="POLPLAB-LOGO3526625.webp" type="image/webp" /><img src="POLPLAB-LOGO3526625.png" alt="Polplab logo" width="56" height="56" loading="lazy" decoding="async" /></picture>Polplab</a>
+      <a class="nav-logo" href="index.html"><picture><source srcset="POLPLAB-LOGO3526625.webp" type="image/webp" /><img src="POLPLAB-LOGO3526625.png" alt="Polplab logo" width="56" height="56" fetchpriority="high" decoding="async" /></picture>Polplab</a>
       <ul class="nav-links">
         <li><a href="index.html#inicio">Inicio</a></li>
         <li><a href="index.html#servicios">Servicios</a></li>
@@ -357,21 +358,21 @@
       <!-- Inicio -->
       <figure class="shot reveal">
         <div class="shot-bar"><div class="shot-dots"><i></i><i></i><i></i></div><div class="shot-url">cubo.com/</div><div class="shot-name">Inicio</div></div>
-        <div class="shot-scroll"><img src="capturas/cubo/01-inicio.jpg" alt="Página de inicio de la tienda Cubo" width="1200" height="9108" loading="lazy" decoding="async" /></div>
+        <div class="shot-scroll"><picture><source srcset="capturas/cubo/01-inicio.webp" type="image/webp" /><img src="capturas/cubo/01-inicio.jpg" alt="Página de inicio de la tienda Cubo" width="1200" height="9108" loading="lazy" decoding="async" /></picture></div>
         <figcaption class="shot-caption"><b>Inicio</b><span>Portada con destacados, categorías, favoritos, ofertas del mes con cuenta regresiva y novedades.</span></figcaption>
       </figure>
 
       <!-- Producto -->
       <figure class="shot reveal">
         <div class="shot-bar"><div class="shot-dots"><i></i><i></i><i></i></div><div class="shot-url">cubo.com/producto/microfono-de-streaming</div><div class="shot-name">Producto</div></div>
-        <div class="shot-scroll"><img src="capturas/cubo/02-producto.jpg" alt="Ficha de producto en la tienda Cubo" width="1200" height="3129" loading="lazy" decoding="async" /></div>
+        <div class="shot-scroll"><picture><source srcset="capturas/cubo/02-producto.webp" type="image/webp" /><img src="capturas/cubo/02-producto.jpg" alt="Ficha de producto en la tienda Cubo" width="1200" height="3129" loading="lazy" decoding="async" /></picture></div>
         <figcaption class="shot-caption"><b>Ficha de producto</b><span>Galería, precio, stock, descripción, especificaciones, entrega y productos relacionados.</span></figcaption>
       </figure>
 
       <!-- Checkout -->
       <figure class="shot reveal">
         <div class="shot-bar"><div class="shot-dots"><i></i><i></i><i></i></div><div class="shot-url">cubo.com/checkout</div><div class="shot-name">Checkout</div></div>
-        <div class="shot-scroll"><img src="capturas/cubo/03-checkout.jpg" alt="Proceso de compra de la tienda Cubo" width="1200" height="2048" loading="lazy" decoding="async" /></div>
+        <div class="shot-scroll"><picture><source srcset="capturas/cubo/03-checkout.webp" type="image/webp" /><img src="capturas/cubo/03-checkout.jpg" alt="Proceso de compra de la tienda Cubo" width="1200" height="2048" loading="lazy" decoding="async" /></picture></div>
         <figcaption class="shot-caption"><b>Checkout</b><span>Compra en 3 pasos: información personal, dirección de entrega y método de pago, con resumen del pedido.</span></figcaption>
       </figure>
 
@@ -439,5 +440,6 @@
     }, { threshold: 0.08 });
     document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
   </script>
+  <script src="analytics.js" defer></script>
 </body>
 </html>

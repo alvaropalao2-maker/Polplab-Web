@@ -143,6 +143,7 @@
       color: var(--dark); opacity: .55;
     }
     .shot-scroll { max-height: 560px; overflow-y: auto; overflow-x: hidden; }
+    .shot-scroll picture { display: block; }
     .shot-scroll img { width: 100%; height: auto; display: block; }
     .shot-caption {
       display: flex; align-items: baseline; gap: 10px;
@@ -170,7 +171,7 @@
   <!-- ══ NAVBAR ════════════════════════════════════════════════════════ -->
   <div class="nav-outer">
     <nav class="navbar" id="navbar">
-      <a class="nav-logo" href="index.html"><picture><source srcset="POLPLAB-LOGO3526625.webp" type="image/webp" /><img src="POLPLAB-LOGO3526625.png" alt="Polplab logo" width="56" height="56" loading="lazy" decoding="async" /></picture>Polplab</a>
+      <a class="nav-logo" href="index.html"><picture><source srcset="POLPLAB-LOGO3526625.webp" type="image/webp" /><img src="POLPLAB-LOGO3526625.png" alt="Polplab logo" width="56" height="56" fetchpriority="high" decoding="async" /></picture>Polplab</a>
       <ul class="nav-links">
         <li><a href="index.html#inicio">Inicio</a></li>
         <li><a href="index.html#servicios">Servicios</a></li>
@@ -228,21 +229,21 @@
       <!-- Inicio -->
       <figure class="shot reveal">
         <div class="shot-bar"><div class="shot-dots"><i></i><i></i><i></i></div><div class="shot-url">pisaditas.com/</div><div class="shot-name">Inicio</div></div>
-        <div class="shot-scroll"><img src="capturas/pisaditas/01-inicio.jpg" alt="Página de inicio de Pisaditas" width="1200" height="3639" loading="lazy" decoding="async" /></div>
+        <div class="shot-scroll"><picture><source srcset="capturas/pisaditas/01-inicio.webp" type="image/webp" /><img src="capturas/pisaditas/01-inicio.jpg" alt="Página de inicio de Pisaditas" width="1200" height="3639" loading="lazy" decoding="async" /></picture></div>
         <figcaption class="shot-caption"><b>Inicio</b><span>Portada, propuesta de valor, programas, testimonios y preguntas frecuentes.</span></figcaption>
       </figure>
 
       <!-- Planes de Precios -->
       <figure class="shot reveal">
         <div class="shot-bar"><div class="shot-dots"><i></i><i></i><i></i></div><div class="shot-url">pisaditas.com/planes-de-precios</div><div class="shot-name">Planes de Precios</div></div>
-        <div class="shot-scroll"><img src="capturas/pisaditas/03-planes-precios.jpg" alt="Página de planes de precios de Pisaditas" width="1200" height="1552" loading="lazy" decoding="async" /></div>
+        <div class="shot-scroll"><picture><source srcset="capturas/pisaditas/03-planes-precios.webp" type="image/webp" /><img src="capturas/pisaditas/03-planes-precios.jpg" alt="Página de planes de precios de Pisaditas" width="1200" height="1552" loading="lazy" decoding="async" /></picture></div>
         <figcaption class="shot-caption"><b>Planes de Precios</b><span>Comparativa de planes y lo que incluye cada modalidad.</span></figcaption>
       </figure>
 
       <!-- Contacto -->
       <figure class="shot reveal">
         <div class="shot-bar"><div class="shot-dots"><i></i><i></i><i></i></div><div class="shot-url">pisaditas.com/contacto</div><div class="shot-name">Contacto</div></div>
-        <div class="shot-scroll"><img src="capturas/pisaditas/05-contacto.jpg" alt="Página de contacto de Pisaditas" width="1200" height="1066" loading="lazy" decoding="async" /></div>
+        <div class="shot-scroll"><picture><source srcset="capturas/pisaditas/05-contacto.webp" type="image/webp" /><img src="capturas/pisaditas/05-contacto.jpg" alt="Página de contacto de Pisaditas" width="1200" height="1066" loading="lazy" decoding="async" /></picture></div>
         <figcaption class="shot-caption"><b>Contacto</b><span>Formulario de inscripción y datos de contacto del centro.</span></figcaption>
       </figure>
 
@@ -310,5 +311,6 @@
     }, { threshold: 0.08 });
     document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
   </script>
+  <script src="analytics.js" defer></script>
 </body>
 </html>

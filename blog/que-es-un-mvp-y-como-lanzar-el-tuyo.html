@@ -146,7 +146,7 @@
   <!-- ══ NAVBAR ════════════════════════════════════════════════════════ -->
   <div class="nav-outer">
     <nav class="navbar" id="navbar">
-      <a class="nav-logo" href="../index.html"><picture><source srcset="../POLPLAB-LOGO3526625.webp" type="image/webp" /><img src="../POLPLAB-LOGO3526625.png" alt="Polplab logo" width="56" height="56" loading="lazy" decoding="async" /></picture>Polplab</a>
+      <a class="nav-logo" href="../index.html"><picture><source srcset="../POLPLAB-LOGO3526625.webp" type="image/webp" /><img src="../POLPLAB-LOGO3526625.png" alt="Polplab logo" width="56" height="56" fetchpriority="high" decoding="async" /></picture>Polplab</a>
       <ul class="nav-links">
         <li><a href="../index.html#inicio">Inicio</a></li>
         <li><a href="../index.html#servicios">Servicios</a></li>
@@ -303,5 +303,6 @@
     }, { threshold: 0.08 });
     document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
   </script>
+  <script src="../analytics.js" defer></script>
 </body>
 </html>
