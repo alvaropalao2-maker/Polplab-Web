@@ -35,9 +35,10 @@ Options -Indexes
   ExpiresByType image/svg+xml           "access plus 1 year"
   ExpiresByType image/x-icon            "access plus 1 year"
 
-  # CSS y JS: 1 día (se versionan con ?v= en el HTML; este es solo red de seguridad)
-  ExpiresByType text/css               "access plus 1 day"
-  ExpiresByType application/javascript "access plus 1 day"
+  # CSS y JS: 1 año (se versionan con ?v= en el HTML; un cambio de contenido
+  # se sirve con una URL distinta, así que cachear de más no oculta cambios)
+  ExpiresByType text/css               "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
 
   # HTML y datos: revalidar siempre para que los cambios se vean al instante
   ExpiresByType text/html              "access plus 0 seconds"
@@ -51,6 +52,6 @@ Options -Indexes
     Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
   <FilesMatch "\.(css|js)$">
-    Header set Cache-Control "public, max-age=86400"
+    Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
 </IfModule>
