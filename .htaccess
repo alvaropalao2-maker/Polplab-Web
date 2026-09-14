@@ -7,6 +7,13 @@ RewriteCond %{HTTPS} off [OR]
 RewriteCond %{HTTP_HOST} ^www\. [NC]
 RewriteRule ^ https://polplab.com%{REQUEST_URI} [L,R=301]
 
+# 1b · index.html no es una URL aparte: /index.html -> /  y  /blog/index.html -> /blog/
+# Sin esto cada pagina existe en dos URLs distintas (ambas devolvian 200).
+# THE_REQUEST mira la peticion original, asi que las reescrituras internas
+# hacia index.html no vuelven a entrar aqui y no se crea un bucle.
+RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.html[\s?] [NC]
+RewriteRule ^(.*/)?index\.html$ /%1 [R=301,L]
+
 # 2 · Página de error propia
 ErrorDocument 404 /404.html
 
@@ -53,5 +60,21 @@ Options -Indexes
   </FilesMatch>
   <FilesMatch "\.(css|js)$">
     Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+</IfModule>
+
+# 7 · Favicon: caché corta y revalidable
+# Su URL no cambia nunca, así que "immutable" + 1 año le decía a Google y a los
+# navegadores que jamás volvieran a pedirlo: al actualizar el icono seguían
+# sirviendo el antiguo. Con 1 día y must-revalidate el cambio se propaga.
+<IfModule mod_headers.c>
+  <FilesMatch "^favicon\.(png|ico)$">
+    Header set Cache-Control "public, max-age=86400, must-revalidate"
+  </FilesMatch>
+</IfModule>
+<IfModule mod_expires.c>
+  <FilesMatch "^favicon\.(png|ico)$">
+    ExpiresActive On
+    ExpiresDefault "access plus 1 day"
   </FilesMatch>
 </IfModule>
