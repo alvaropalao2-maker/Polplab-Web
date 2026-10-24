@@ -872,6 +872,10 @@
     }
     .footer-socials a:hover{ opacity:1.8; }
     .footer-socials svg{ width:18px; height:18px; }
+    .footer-copy {
+      margin-top:24px; padding-top:20px; border-top:1px solid rgba(255,255,255,.08);
+      font-size:13px; color:rgba(255,255,255,.55);
+    }
     @media(max-width:640px){
       .footer-inner{ flex-direction:column; align-items:flex-start; gap:16px; }
     }
