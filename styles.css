@@ -1005,11 +1005,15 @@
 
     /* ── Cards grid ─────────────────────────────────────────────────── */
     .cards-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      padding-bottom: 80px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      padding-bottom: 32px;
     }
+    @media (max-width: 1024px) { .cards-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 640px)  { .cards-grid { grid-template-columns: 1fr; } }
+    .project-card[hidden] { display: none; }
+    .projects-more { display: flex; justify-content: center; padding-bottom: 80px; }
 
     /* Card — exact Alter card style */
     .project-card {
@@ -1068,6 +1072,25 @@
       height: auto;
       display: block;
     }
+    /* Miniaturas del listado: mismo formato para todos los proyectos */
+    .cards-grid .card-image {
+      aspect-ratio: 16 / 10;
+      margin: 12px 12px 0;
+      border-radius: 14px;
+      position: relative;
+    }
+    .cards-grid .card-image picture { display: block; }
+    .cards-grid .card-image img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: top center;
+      display: block;
+    }
+    .cards-grid .card-content { padding: 16px 18px 20px; gap: 10px; }
+    .cards-grid .card-avatar { width: 34px; height: 34px; font-size: 12px; }
+    .cards-grid .card-sep { height: 28px; margin: 0 10px; }
+    .cards-grid .card-category { font-size: 14px; line-height: 140%; }
+    .cards-grid .card-date { font-size: 12.5px; }
     /* Inner image wrapper with own shadow */
     .card-image-inner {
       width: 100%;
