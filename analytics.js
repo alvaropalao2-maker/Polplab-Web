@@ -22,4 +22,34 @@
 
   gtag('js', new Date());
   gtag('config', GA_ID);
+
+  /* ── Eventos propios ───────────────────────────────────────────────────
+   * click_whatsapp  → clic en cualquier enlace a WhatsApp
+   * click_demo      → clic en "Ver demo en vivo" / "Ver la tienda en vivo"
+   * generate_lead   → envío del formulario de contacto (lo dispara index.html)
+   *
+   * Para que aparezcan en "Eventos clave" hay que marcarlos como tales en
+   * GA4 → Administrar → Eventos. No se envían datos personales.
+   * ─────────────────────────────────────────────────────────────────── */
+  var DEMOS = {
+    'cubo.polplab.com': 'cubo',
+    'pisaditas.polplab.com': 'pisaditas',
+    'dashboard.polplab.com': 'dashboard',
+    'pulenta-frontend.pages.dev': 'pajaza'
+  };
+
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href]');
+    if (!a) return;
+    var host = a.hostname;
+    var base = { page_path: location.pathname, transport_type: 'beacon' };
+
+    if (host === 'wa.me' || host === 'api.whatsapp.com') {
+      base.link_location = a.classList.contains('whatsapp-fab') ? 'boton_flotante' : 'enlace';
+      gtag('event', 'click_whatsapp', base);
+    } else if (DEMOS[host]) {
+      base.project = DEMOS[host];
+      gtag('event', 'click_demo', base);
+    }
+  });
 })();
